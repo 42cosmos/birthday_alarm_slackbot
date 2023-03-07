@@ -17,8 +17,9 @@ def find_date_file(last_date_ws: str, file_list: list):
 
 
 class SpreadSheetsDownloader:
-    def __init__(self, spreadsheet_id):
-        key_path = "/home/eunbinpark/workspace/slack_birthday_bot"
+    def __init__(self, spreadsheet_id, key_path=None):
+        if not key_path:
+            key_path = os.getcwd()
 
         self.doc = None
         self.worksheet = None
